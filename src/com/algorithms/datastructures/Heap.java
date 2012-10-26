@@ -1,7 +1,6 @@
 package com.algorithms.datastructures;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Arrays;
 
 import com.algorithms.sorting.ArrayUtils;
 
@@ -16,13 +15,18 @@ import com.algorithms.sorting.ArrayUtils;
  */
 public class Heap {
 
-    private final List<Integer> storage = new ArrayList<Integer>();
+    private static final float LOAD_FACTOR = 0.75f;
+
+    private int size = 0;
+
+    private int[] storage;
 
     /**
      * Constructs an empty heap.
      */
     public Heap() {
-
+        size = 100;
+        storage = new int[size];
     }
 
     /**
@@ -35,11 +39,18 @@ public class Heap {
      * The array containing the elements to initialize the heap with.
      */
     public Heap(int[] array) {
-        for (int i = 0; i < array.length; i++) {
-            storage.add(array[i]);
+        if (array.length < 50) {
+            storage = new int[100];
         }
-        for (int i = storage.size() / 2 - 1; i >= 0; i--) {
-            bubbleDown(storage, i);
+        else {
+            storage = new int[array.length * 2];
+        }
+        size = array.length;
+        for (int i = 0; i < size; i++) {
+            storage[i] = array[i];
+        }
+        for (int i = size / 2 - 1; i >= 0; i--) {
+            bubbleDown(i);
         }
     }
 
@@ -52,17 +63,17 @@ public class Heap {
      * @return Newly removed element.
      */
     public Integer extractMin() {
-        if (storage.size() == 0) {
+        if (size == 0) {
             throw new IllegalStateException("Heap is empty.");
         }
-        Integer min = storage.get(0);
+        int min = storage[0];
 
         // Move last leaf to be new root
-        storage.set(0, storage.get(storage.size() - 1));
-        storage.remove(storage.size() - 1);
+        storage[0] = storage[size - 1];
+        size--;
 
-        // Bubble-Down until heap property has been restored
-        bubbleDown(storage, 0);
+        // Bubble-Down new root until heap property has been restored
+        bubbleDown(0);
 
         return min;
     }
@@ -76,14 +87,25 @@ public class Heap {
      * Element to add to the heap.
      */
     public void insert(int element) {
-        storage.add(element);
 
-        // Bubble-Up element until heap property is restored
-        bubbleUp(storage, storage.size() - 1);
+        // If storage is loaded on more than 75% - increase its size twice
+        if ((float) size / storage.length > LOAD_FACTOR) {
+            storage = Arrays.copyOf(storage, storage.length * 2);
+        }
+
+        // Insert new element
+        storage[size] = element;
+        size++;
+
+        // Bubble-Up new element until heap property is restored
+        bubbleUp(size - 1);
     }
 
+    /**
+     * @return Number of elements in this heap.
+     */
     public int size() {
-        return storage.size();
+        return size;
     }
 
     @Override
@@ -91,28 +113,28 @@ public class Heap {
         return storage.toString();
     }
 
-    private void bubbleDown(List<Integer> list, int index) {
+    private void bubbleDown(int index) {
         int left = getLeftChildIndex(index);
         int right = getRightChildIndex(index);
         int min = index;
-        if (left < storage.size() && storage.get(min).compareTo(storage.get(left)) > 0) {
+        if (left < size && storage[min] > storage[left]) {
             min = left;
         }
-        if (right < storage.size() && storage.get(min).compareTo(storage.get(right)) > 0) {
+        if (right < size && storage[min] > storage[right]) {
             min = right;
         }
         if (index != min) {
-            ArrayUtils.swap(list, index, min);
-            bubbleDown(list, min);
+            ArrayUtils.swap(storage, index, min);
+            bubbleDown(min);
         }
     }
 
-    private void bubbleUp(List<Integer> list, int index) {
+    private void bubbleUp(int index) {
         if (index > 0) {
             int parent = getParentIndex(index);
-            if (storage.get(parent).compareTo(storage.get(index)) > 0) {
+            if (storage[parent] > storage[index]) {
                 ArrayUtils.swap(storage, index, parent);
-                bubbleUp(list, parent);
+                bubbleUp(parent);
             }
         }
     }
