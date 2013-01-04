@@ -27,6 +27,10 @@ public class UndirectedGraph {
 		vertices.put(vertex, new HashSet<Edge>());
 	}
 
+	public Set<Edge> getEdges() {
+		return Collections.unmodifiableSet(edges);
+	}
+
 	public Set<Integer> getVertices() {
 		return Collections.unmodifiableSet(vertices.keySet());
 	}
