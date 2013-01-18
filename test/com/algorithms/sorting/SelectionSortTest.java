@@ -1,6 +1,5 @@
 package com.algorithms.sorting;
 
-
 public class SelectionSortTest extends SortTest {
 
     @Override

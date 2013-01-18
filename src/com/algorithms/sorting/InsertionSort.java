@@ -6,7 +6,7 @@ public class InsertionSort {
      * Sorts the array ascending using Insertion sort algorithm.
      * 
      * @param array
-     * Array to be sorted.
+     *            - array to be sorted.
      */
     public static void sort(int[] array) {
         int comparisons = 0;
@@ -20,8 +20,8 @@ public class InsertionSort {
                 }
             }
         }
-        System.out.println("Array of " + array.length + " elements sorted via Insertion sort with " + comparisons + " comparisons.");
+        System.out.println("Array of " + array.length + " elements sorted via Insertion sort with " + comparisons
+                + " comparisons.");
     }
 
 }
-

@@ -13,24 +13,24 @@ import com.algorithms.dynamic.Knapsack.Item;
 
 public class KnapsackTest {
 
-	private final String dataFileLocation = "C:\\Users\\ivanpa\\Study\\Algorithms-Showcase\\test\\data\\knapsack2.txt";
+    private final String dataFileLocation = "C:\\Users\\ivanpa\\Study\\Algorithms-Showcase\\test\\data\\knapsack2.txt";
 
-	@Test
-	public void testPack() {
-		try {
-			File dataFile = new File(dataFileLocation);
-			Scanner scanner = new Scanner(dataFile);
-			int knapsackSize = scanner.nextInt();
-			int numberOfItems = scanner.nextInt();
-			Item[] items = new Item[numberOfItems];
-			for (int i = 0; i < numberOfItems; i++) {
-				items[i] = new Item(scanner.nextInt(), scanner.nextInt());
-			}
-			Knapsack knapsack = new Knapsack(knapsackSize);
-			System.out.println(knapsack.pack(items));
-		} catch (FileNotFoundException e) {
-			fail("Cannot find knapsack data file: " + dataFileLocation);
-		}
-	}
+    @Test
+    public void testPack() {
+        try {
+            File dataFile = new File(dataFileLocation);
+            Scanner scanner = new Scanner(dataFile);
+            int knapsackSize = scanner.nextInt();
+            int numberOfItems = scanner.nextInt();
+            Item[] items = new Item[numberOfItems];
+            for (int i = 0; i < numberOfItems; i++) {
+                items[i] = new Item(scanner.nextInt(), scanner.nextInt());
+            }
+            Knapsack knapsack = new Knapsack(knapsackSize);
+            System.out.println(knapsack.pack(items));
+        } catch (FileNotFoundException e) {
+            fail("Cannot find knapsack data file: " + dataFileLocation);
+        }
+    }
 
 }

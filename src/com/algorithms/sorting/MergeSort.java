@@ -8,7 +8,7 @@ public class MergeSort {
      * Sorts the array ascending using Merge sort algorithm.
      * 
      * @param array
-     * Array to be sorted.
+     *            - array to be sorted.
      */
     public static void sort(int[] array) {
         if (array.length > 1) {
@@ -29,8 +29,7 @@ public class MergeSort {
                 if (r == right.length || (l < left.length && left[l] < right[r])) {
                     array[i] = left[l];
                     l++;
-                }
-                else {
+                } else {
                     array[i] = right[r];
                     r++;
                 }

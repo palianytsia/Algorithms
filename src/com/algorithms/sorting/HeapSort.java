@@ -8,7 +8,7 @@ public class HeapSort {
      * Sorts the array ascending using Heap data structure.
      * 
      * @param array
-     * Array to be sorted.
+     *            - array to be sorted.
      */
     public static void sort(int[] array) {
         Heap heap = new Heap(array);

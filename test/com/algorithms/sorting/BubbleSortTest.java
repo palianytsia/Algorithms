@@ -1,6 +1,5 @@
 package com.algorithms.sorting;
 
-
 public class BubbleSortTest extends SortTest {
 
     @Override

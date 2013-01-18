@@ -12,8 +12,7 @@ public abstract class SortTest {
         try {
             sort(new int[] {});
             sort(new int[] { 0 });
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             Assert.fail(e.toString());
         }
     }
