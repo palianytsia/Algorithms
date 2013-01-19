@@ -8,12 +8,11 @@ import java.util.Scanner;
 
 import org.junit.Test;
 
-import com.algorithms.dynamic.Knapsack;
 import com.algorithms.dynamic.Knapsack.Item;
 
 public class KnapsackTest {
 
-    private final String dataFileLocation = "C:\\Users\\ivanpa\\Study\\Algorithms-Showcase\\test\\data\\knapsack2.txt";
+    private final String dataFileLocation = "test\\data\\knapsack1.txt";
 
     @Test
     public void testPack() {
@@ -26,6 +25,7 @@ public class KnapsackTest {
             for (int i = 0; i < numberOfItems; i++) {
                 items[i] = new Item(scanner.nextInt(), scanner.nextInt());
             }
+            scanner.close();
             Knapsack knapsack = new Knapsack(knapsackSize);
             System.out.println(knapsack.pack(items));
         } catch (FileNotFoundException e) {
