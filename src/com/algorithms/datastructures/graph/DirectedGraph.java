@@ -5,10 +5,10 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.util.Set;
 
-public class UndirectedGraph extends AbstractGraph {
+public class DirectedGraph extends AbstractGraph {
 
     /**
-     * Creates new <UndirectedGraph> instance based on its description stored in a plain text data file .
+     * Creates new <DirectedGraph> instance based on its description stored in a plain text data file.
      * 
      * <p>
      * The data file should be in the following format:
@@ -20,8 +20,6 @@ public class UndirectedGraph extends AbstractGraph {
      * [number_of_nodes] [number_of_edges] <br>
      * [edge 1 node 1] [edge 1 node 2] [edge 1 cost] <br>
      * [edge 2 node 1] [edge 2 node 2] [edge 2 cost]</li>
-     * <li>You don't need specify the edge twice, e.g. if there is an edge between A and B it is enough to specify [A B
-     * cost] line, no need to add [B A cost], otherwise two edges will be added between those vertices.</li>
      * </ul>
      * </p>
      * 
@@ -31,10 +29,10 @@ public class UndirectedGraph extends AbstractGraph {
      * @throws FileNotFoundException
      *             - if there is no graph data file at the specified path.
      */
-    public static UndirectedGraph fromFile(String filePath) throws FileNotFoundException {
+    public static DirectedGraph fromFile(String filePath) throws FileNotFoundException {
         File dataFile = new File(filePath);
         Scanner scanner = new Scanner(dataFile);
-        UndirectedGraph g = new UndirectedGraph();
+        DirectedGraph g = new DirectedGraph();
 
         // number of vertices
         int n = scanner.nextInt();
@@ -57,7 +55,7 @@ public class UndirectedGraph extends AbstractGraph {
         Set<Edge> adjacentEdges = vertices.get(vertexA);
         if (adjacentEdges != null) {
             for (Edge e : adjacentEdges) {
-                if (e.isAdjacentTo(vertexB)) {
+                if (e.getVertexA() == vertexA && e.getVertexB() == vertexB) {
                     return true;
                 }
             }

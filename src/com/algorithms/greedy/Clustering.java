@@ -8,18 +8,18 @@ import java.util.PriorityQueue;
 import java.util.Set;
 
 import com.algorithms.datastructures.graph.Edge;
-import com.algorithms.datastructures.graph.UndirectedGraph;
+import com.algorithms.datastructures.graph.Graph;
 
 public class Clustering {
 
-    public static Set<Set<Integer>> findClusters(UndirectedGraph g, int k) {
+    public static Set<Set<Integer>> findClusters(Graph g, int k) {
         // Initialisation step 1: sort edges by their weight
         PriorityQueue<Edge> edges = new PriorityQueue<Edge>(g.getEdges().size(), new Comparator<Edge>() {
             @Override
             public int compare(Edge a, Edge b) {
-                if (a.getCost() < b.getCost()) {
+                if (a.getLength() < b.getLength()) {
                     return -1;
-                } else if (a.getCost() > b.getCost()) {
+                } else if (a.getLength() > b.getLength()) {
                     return 1;
                 }
                 return 0;

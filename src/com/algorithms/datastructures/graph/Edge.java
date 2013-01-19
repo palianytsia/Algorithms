@@ -1,19 +1,19 @@
 package com.algorithms.datastructures.graph;
 
-public final class Edge {
+public class Edge {
 
-    private final int cost;
+    private final int length;
     private final int vertexA;
     private final int vertexB;
 
-    public Edge(int vertexA, int vertexB, int cost) {
+    Edge(int vertexA, int vertexB, int length) {
         this.vertexA = vertexA;
         this.vertexB = vertexB;
-        this.cost = cost;
+        this.length = length;
     }
 
-    public int getCost() {
-        return cost;
+    public int getLength() {
+        return length;
     }
 
     public int getVertexA() {
