@@ -12,7 +12,7 @@ import com.algorithms.dynamic.Knapsack.Item;
 
 public class KnapsackTest {
 
-    private final String dataFileLocation = "test\\data\\knapsack1.txt";
+    private final String dataFileLocation = "test\\data\\dynamic\\knapsack1.txt";
 
     @Test
     public void testPack() {

@@ -14,7 +14,7 @@ public class DirectedGraphTest {
 
     private DirectedGraph g;
 
-    private final String dataFileLocation = "test\\data\\graph\\g0.txt";
+    private final String dataFileLocation = "test\\data\\datastructures\\graph.txt";
 
     private final int[][] verificationMatrix = { { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 },
             { 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0 }, { 2, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0 },
