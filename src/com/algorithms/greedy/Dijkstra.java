@@ -39,15 +39,16 @@ public class Dijkstra {
         });
         remaining.addAll(g.getVertices());
         while (remaining.size() > 0) {
-            Integer vertex = remaining.poll();
-            Double distance = greedyScores.get(vertex);
-            processed.put(vertex, distance);
-            for (Edge e : g.getOutgoingEdges(vertex)) {
-                if (remaining.contains(e.getVertexB())) {
-                    Double oldKey = greedyScores.get(e.getVertexB());
-                    greedyScores.put(e.getVertexB(), Math.min(oldKey, distance + e.getLength()));
-                    remaining.remove(e.getVertexB());
-                    remaining.add(e.getVertexB());
+            Integer edgeStart = remaining.poll();
+            Double distance = greedyScores.get(edgeStart);
+            processed.put(edgeStart, distance);
+            for (Edge e : g.getOutgoingEdges(edgeStart)) {
+                Integer edgeEnd = e.getOtherVertex(edgeStart);
+                if (remaining.contains(edgeEnd)) {
+                    Double oldKey = greedyScores.get(edgeEnd);
+                    greedyScores.put(edgeEnd, Math.min(oldKey, distance + e.getLength()));
+                    remaining.remove(edgeEnd);
+                    remaining.add(edgeEnd);
                 }
             }
         }
