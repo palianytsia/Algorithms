@@ -2,9 +2,13 @@ package com.algorithms.datastructures.graph;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
 
+/**
+ * @author Ivan Palianytsia <a href="mailto:ivan.palianytsia@gmail.com">ivan.palianytsia@gmail.com</a>
+ */
 public class DirectedGraph extends AbstractGraph {
 
     /**
@@ -48,6 +52,47 @@ public class DirectedGraph extends AbstractGraph {
         }
         scanner.close();
         return g;
+    }
+
+    /**
+     * Default constructor. Creates an empty directed graph with no vertices and no edges.
+     */
+    public DirectedGraph() {
+
+    }
+
+    /**
+     * Copy constructor. Creates a new <code>DirectedGraph</code> instance which is an exact copy of a given one.
+     * 
+     * @param g
+     *            - the directed graph to copy.
+     */
+    public DirectedGraph(DirectedGraph g) {
+        super(g);
+    }
+
+    @Override
+    public Set<Edge> getIncomingEdges(int vertex) {
+        Set<Edge> adjacentEdges = vertices.get(vertex);
+        Set<Edge> incomingEdges = new HashSet<Edge>();
+        for (Edge e : adjacentEdges) {
+            if (e.getVertexB() == vertex) {
+                incomingEdges.add(e);
+            }
+        }
+        return incomingEdges;
+    }
+
+    @Override
+    public Set<Edge> getOutgoingEdges(int vertex) {
+        Set<Edge> adjacentEdges = vertices.get(vertex);
+        Set<Edge> outgoingEdges = new HashSet<Edge>();
+        for (Edge e : adjacentEdges) {
+            if (e.getVertexA() == vertex) {
+                outgoingEdges.add(e);
+            }
+        }
+        return outgoingEdges;
     }
 
     @Override

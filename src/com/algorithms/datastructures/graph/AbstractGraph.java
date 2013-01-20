@@ -8,12 +8,38 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+/**
+ * @author Ivan Palianytsia <a href="mailto:ivan.palianytsia@gmail.com">ivan.palianytsia@gmail.com</a>
+ */
 public abstract class AbstractGraph implements Graph {
 
     private int lastInsertId = 0;
 
     protected final Set<Edge> edges = new HashSet<Edge>();
     protected final Map<Integer, Set<Edge>> vertices = new HashMap<Integer, Set<Edge>>();
+
+    /**
+     * Default constructor. Creates an empty graph with no vertices and no edges.
+     */
+    public AbstractGraph() {
+
+    };
+
+    /**
+     * Copy constructor. Creates a new <code>Graph</code> instance which is an exact copy of a given one.
+     * 
+     * @param g
+     *            - the graph to copy.
+     */
+    public AbstractGraph(AbstractGraph g) {
+        lastInsertId = g.lastInsertId;
+        for (Edge e : g.edges) {
+            edges.add(new Edge(e));
+        }
+        for (Integer v : g.getVertices()) {
+            vertices.put(v, new HashSet<Edge>(g.vertices.get(v)));
+        }
+    }
 
     @Override
     public void addEdge(int vertexA, int vertexB) {

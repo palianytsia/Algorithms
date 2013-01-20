@@ -1,5 +1,8 @@
 package com.algorithms.datastructures.graph;
 
+/**
+ * @author Ivan Palianytsia <a href="mailto:ivan.palianytsia@gmail.com">ivan.palianytsia@gmail.com</a>
+ */
 public class Edge {
 
     private double length = 0;

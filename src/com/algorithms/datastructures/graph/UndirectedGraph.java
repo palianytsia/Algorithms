@@ -5,6 +5,9 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.util.Set;
 
+/**
+ * @author Ivan Palianytsia <a href="mailto:ivan.palianytsia@gmail.com">ivan.palianytsia@gmail.com</a>
+ */
 public class UndirectedGraph extends AbstractGraph {
 
     /**
@@ -50,6 +53,33 @@ public class UndirectedGraph extends AbstractGraph {
         }
         scanner.close();
         return g;
+    }
+
+    /**
+     * Default constructor. Creates an empty undirected graph with no vertices and no edges.
+     */
+    public UndirectedGraph() {
+
+    }
+
+    /**
+     * Copy constructor. Creates a new <code>UndirectedGraph</code> instance which is an exact copy of a given one.
+     * 
+     * @param g
+     *            - the undirected graph to copy.
+     */
+    public UndirectedGraph(UndirectedGraph g) {
+        super(g);
+    }
+
+    @Override
+    public Set<Edge> getIncomingEdges(int vertex) {
+        return vertices.get(vertex);
+    }
+
+    @Override
+    public Set<Edge> getOutgoingEdges(int vertex) {
+        return vertices.get(vertex);
     }
 
     @Override

@@ -2,6 +2,9 @@ package com.algorithms.datastructures.graph;
 
 import java.util.Set;
 
+/**
+ * @author Ivan Palianytsia <a href="mailto:ivan.palianytsia@gmail.com">ivan.palianytsia@gmail.com</a>
+ */
 public interface Graph {
 
     /**
@@ -91,6 +94,18 @@ public interface Graph {
     public Set<Edge> getEdges();
 
     /**
+     * Retrieves the incoming edges for a given vertex. For the undirected graph the set of incoming edges is exactly
+     * the same as the set of outgoing edges.
+     * 
+     * @param vertex
+     *            - id of the vertex to retrieve incoming edges for.
+     * 
+     * @return Set of incoming edges (if any), empty set (if there are no incoming edges) or null (if graph doesn't
+     *         contain a vertex with such id).
+     */
+    public Set<Edge> getIncomingEdges(int vertex);
+
+    /**
      * Retrieves number of edges contained by this graph.
      * 
      * @return number of edges.
@@ -103,6 +118,18 @@ public interface Graph {
      * @return number of vertices.
      */
     public int getNumVertices();
+
+    /**
+     * Retrieves the outgoing edges for a given vertex. For the undirected graph the set of outgoing edges is exactly
+     * the same as the set of outgoing edges.
+     * 
+     * @param vertex
+     *            - id of the vertex to retrieve incoming edges for.
+     * 
+     * @return Set of outgoing edges (if any), empty set (if there are no outgoing edges) or null (if graph doesn't
+     *         contain a vertex with such id).
+     */
+    public Set<Edge> getOutgoingEdges(int vertex);
 
     /**
      * Retrieves set of vertices contained by this graph.
