@@ -30,7 +30,7 @@ public class BellmanFordTest {
     }
 
     @Test
-    public void testNegativeCycleShortestPath() {
+    public void testNegativeCycleDetection() {
         try {
             DirectedGraph g = DirectedGraph.fromFile(negativeCycleGraphFileLocation);
             SortedMap<Integer, Double> distances = BellmanFord.shortestPath(g, 1);
