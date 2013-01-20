@@ -2,17 +2,24 @@ package com.algorithms.datastructures.graph;
 
 public class Edge {
 
-    private final int length;
+    private double length = 0;
+
     private final int vertexA;
     private final int vertexB;
 
-    Edge(int vertexA, int vertexB, int length) {
+    Edge(Edge e) {
+        this.vertexA = e.vertexA;
+        this.vertexB = e.vertexB;
+        this.length = e.length;
+    }
+
+    Edge(int vertexA, int vertexB, double length) {
         this.vertexA = vertexA;
         this.vertexB = vertexB;
         this.length = length;
     }
 
-    public int getLength() {
+    public double getLength() {
         return length;
     }
 
@@ -26,6 +33,15 @@ public class Edge {
 
     public boolean isAdjacentTo(int vertex) {
         return vertexA == vertex || vertexB == vertex;
+    }
+
+    public void setLength(double length) {
+        this.length = length;
+    }
+
+    @Override
+    public String toString() {
+        return "Edge [" + vertexA + " ->" + vertexB + ",length=" + length + "]";
     }
 
 }
