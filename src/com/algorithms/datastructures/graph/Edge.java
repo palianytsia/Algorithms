@@ -26,6 +26,16 @@ public class Edge {
         return length;
     }
 
+    public int getOtherVertex(int vertex) {
+        if (vertexA == vertex) {
+            return vertexB;
+        }
+        if (vertexB == vertex) {
+            return vertexA;
+        }
+        throw new IllegalArgumentException("The given vertex does not belong to this edge - other verex is ambigious.");
+    }
+
     public int getVertexA() {
         return vertexA;
     }
