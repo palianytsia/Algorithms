@@ -1,5 +1,7 @@
 package com.algorithms.greedy;
 
+import java.util.Set;
+
 import junit.framework.Assert;
 
 import org.junit.Before;
@@ -12,7 +14,7 @@ public class ClusteringTest {
 
     private Graph g;
 
-    private final String dataFileLocation = "test\\data\\clustering1.txt";
+    private final String dataFileLocation = "test\\data\\greedy\\clustering1.txt";
 
     @Before
     public void setUp() throws Exception {
@@ -20,9 +22,19 @@ public class ClusteringTest {
     }
 
     @Test
-    public void testFindClusters() {
-        Clustering.findClusters(g, 4);
-        Assert.fail("Not yet implemented.");
+    public void testClustering() {
+        Set<Cluster> clusters = Clustering.findClusters(g, 4);
+
+        Assert.assertEquals(4, clusters.size());
+
+        int totalSize = 0;
+        for (Cluster cluster : clusters) {
+            totalSize += cluster.size();
+        }
+        Assert.assertEquals(g.getNumVertices(), totalSize);
+
+        Double maxSpacing = Clustering.getSpacing(clusters);
+        Assert.assertEquals(0, maxSpacing.compareTo(106d));
     }
 
 }
