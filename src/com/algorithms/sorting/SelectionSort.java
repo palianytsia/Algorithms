@@ -38,7 +38,7 @@ public class SelectionSort {
 	 *            - array to be sorted.
 	 */
 	public static void sort(int[] array) {
-		int comparisons = 0;
+		long comparisons = 0;
 		for (int i = 0; i < array.length - 1; i++) {
 			comparisons += select(array, i);
 		}
@@ -62,8 +62,8 @@ public class SelectionSort {
 	 * @return number of comparisons made during selecting an element for the
 	 *         given position.
 	 */
-	private static int select(int[] array, int position) {
-		int comparisons = 0;
+	private static long select(int[] array, int position) {
+		long comparisons = 0;
 		int min = position;
 		for (int i = position + 1; i < array.length; i++) {
 			if (array[i] < array[min]) {
