@@ -6,8 +6,7 @@ import java.util.BitSet;
 import java.util.Scanner;
 import java.util.Set;
 
-import junit.framework.Assert;
-
+import org.junit.Assert;
 import org.junit.Test;
 
 import com.algorithms.datastructures.graph.Graph;
@@ -62,6 +61,8 @@ public class ClusteringTest {
                 }
                 labels[i] = label;
             }
+            
+            scanner.close();
 
             int maxNumberOfClusters = HammingClustering.getMaxNumberOfClusters(labels, 3);
             Assert.assertEquals(16508, maxNumberOfClusters);

@@ -3,8 +3,7 @@ package com.algorithms.greedy;
 import java.io.FileNotFoundException;
 import java.util.Set;
 
-import junit.framework.Assert;
-
+import org.junit.Assert;
 import org.junit.Test;
 
 import com.algorithms.datastructures.graph.Edge;

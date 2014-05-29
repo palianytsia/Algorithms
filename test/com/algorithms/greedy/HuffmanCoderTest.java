@@ -4,8 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import junit.framework.Assert;
-
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -50,7 +49,7 @@ public class HuffmanCoderTest {
 
     @Test
     public void testGetEvarageEncodingLength() {
-        Assert.assertEquals(2.23f, coder.getEvarageEncodingLength());
+        Assert.assertTrue(2.23 == coder.getEvarageEncodingLength());
     }
 
 }

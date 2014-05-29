@@ -3,8 +3,7 @@ package com.algorithms;
 import java.io.FileNotFoundException;
 import java.util.SortedMap;
 
-import junit.framework.Assert;
-
+import org.junit.Assert;
 import org.junit.Test;
 
 import com.algorithms.datastructures.graph.DirectedGraph;
@@ -34,7 +33,7 @@ public class JonsonTest {
         } catch (FileNotFoundException e) {
             Assert.fail(e.getMessage());
         }
-        Assert.assertEquals(19d, minShortestPathDistance);
+        Assert.assertTrue(19 == minShortestPathDistance);
     }
 
     @Test

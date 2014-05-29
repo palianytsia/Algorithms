@@ -3,8 +3,7 @@ package com.algorithms.dynamic;
 import java.io.FileNotFoundException;
 import java.util.SortedMap;
 
-import junit.framework.Assert;
-
+import org.junit.Assert;
 import org.junit.Test;
 
 import com.algorithms.datastructures.graph.DirectedGraph;
@@ -20,9 +19,9 @@ public class BellmanFordTest {
         try {
             DirectedGraph g = DirectedGraph.fromFile(negativeCostGraphFileLocation);
             SortedMap<Integer, Double> distances = BellmanFord.shortestPath(g, 1);
-            Assert.assertEquals(5d, distances.get(2));
-            Assert.assertEquals(11d, distances.get(7));
-            Assert.assertEquals(29d, distances.get(9));
+            Assert.assertTrue(5d == distances.get(2));
+            Assert.assertTrue(11d == distances.get(7));
+            Assert.assertTrue(29d == distances.get(9));
             System.out.println(distances);
         } catch (FileNotFoundException e) {
             Assert.fail(e.getMessage());
@@ -45,9 +44,9 @@ public class BellmanFordTest {
         try {
             DirectedGraph g = DirectedGraph.fromFile(graphFileLocation);
             SortedMap<Integer, Double> distances = BellmanFord.shortestPath(g, 1);
-            Assert.assertEquals(10d, distances.get(2));
-            Assert.assertEquals(21d, distances.get(7));
-            Assert.assertEquals(39d, distances.get(9));
+            Assert.assertTrue(10d == distances.get(2));
+            Assert.assertTrue(21d == distances.get(7));
+            Assert.assertTrue(39d == distances.get(9));
             System.out.println(distances);
         } catch (FileNotFoundException e) {
             Assert.fail(e.getMessage());
