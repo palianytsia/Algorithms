@@ -23,7 +23,7 @@ public class InsertionSort {
 		for (int i = index; i > 0; i--) {
 			comparisons++;
 			if (array[i - 1] > array[i]) {
-				ArrayUtils.swap(array, i, i - 1);
+				ArrayUtils.swap(array, i - 1, i);
 			}
 			else {
 				// element is in its correct position
