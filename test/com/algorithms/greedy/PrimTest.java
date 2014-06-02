@@ -15,23 +15,23 @@ public class PrimTest {
 
     @Test
     public void testGetMinimumSpanningTree() {
-        try {
-            UndirectedGraph g = UndirectedGraph.fromFile(dataFileLocation);
-            Set<Edge> mst = Prim.getMinimumSpanningTree(g);
-            Assert.assertNotNull(mst);
-            Assert.assertFalse("Tree doesn't contain any edges", mst.isEmpty());
-            Assert.assertEquals(-3612829L, getTreeCost(mst));
-        } catch (FileNotFoundException e) {
-            Assert.fail(e.getMessage());
-        }
+	try {
+	    UndirectedGraph g = UndirectedGraph.fromFile(dataFileLocation);
+	    Set<Edge> mst = Prim.getMinimumSpanningTree(g);
+	    Assert.assertNotNull(mst);
+	    Assert.assertFalse("Tree doesn't contain any edges", mst.isEmpty());
+	    Assert.assertEquals(-3612829L, getTreeCost(mst));
+	} catch (FileNotFoundException e) {
+	    Assert.fail(e.getMessage());
+	}
     }
 
     private long getTreeCost(Set<Edge> tree) {
-        long cost = 0;
-        for (Edge edge : tree) {
-            cost += edge.getLength();
-        }
-        return cost;
+	long cost = 0;
+	for (Edge edge : tree) {
+	    cost += edge.getLength();
+	}
+	return cost;
     }
 
 }

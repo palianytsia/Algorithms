@@ -11,9 +11,8 @@ public interface Graph {
      * Connects vertices A and B by a new edge of length 1.
      * 
      * <p>
-     * If A and B are already connected, a new edge (parallel to already existing ones) will be added. For undirected
-     * graphs adding and edge (A, B) is equivalent to adding edge (B, A), so {@link #hasEdge(int, int)} method will
-     * return true for any order of arguments.
+     * If A and B are already connected, a new edge (parallel to already existing ones) will be added. For undirected graphs adding and edge (A, B) is
+     * equivalent to adding edge (B, A), so {@link #hasEdge(int, int)} method will return true for any order of arguments.
      * </p>
      * 
      * @param vertexA
@@ -30,9 +29,8 @@ public interface Graph {
      * Connects vertices A and B by a new edge of length 1.
      * 
      * <p>
-     * If A and B are already connected, a new edge (parallel to already existing ones) will be added. For undirected
-     * graphs adding and edge (A, B) is equivalent to adding edge (B, A), so {@link #hasEdge(int, int)} method will
-     * return true for any order of arguments.
+     * If A and B are already connected, a new edge (parallel to already existing ones) will be added. For undirected graphs adding and edge (A, B) is
+     * equivalent to adding edge (B, A), so {@link #hasEdge(int, int)} method will return true for any order of arguments.
      * </p>
      * 
      * @param vertexA
@@ -51,13 +49,6 @@ public interface Graph {
      * @return Identifier of a newly added vertex.
      */
     public int addVertex();
-
-    /**
-     * Appends a specified number of new vertices to this graph.
-     * 
-     * @return Identifier of the last vertex added by this bulk operation.
-     */
-    public int addVertices(int n);
 
     /**
      * Gets an adjacency matrix of this graph.
@@ -94,14 +85,12 @@ public interface Graph {
     public Set<Edge> getEdges();
 
     /**
-     * Retrieves the incoming edges for a given vertex. For the undirected graph the set of incoming edges is exactly
-     * the same as the set of outgoing edges.
+     * Retrieves the incoming edges for a given vertex. For the undirected graph the set of incoming edges is exactly the same as the set of outgoing edges.
      * 
      * @param vertex
      *            - id of the vertex to retrieve incoming edges for.
      * 
-     * @return Set of incoming edges (if any), empty set (if there are no incoming edges) or null (if graph doesn't
-     *         contain a vertex with such id).
+     * @return Set of incoming edges (if any), empty set (if there are no incoming edges) or null (if graph doesn't contain a vertex with such id).
      */
     public Set<Edge> getIncomingEdges(int vertex);
 
@@ -120,14 +109,12 @@ public interface Graph {
     public int getNumVertices();
 
     /**
-     * Retrieves the outgoing edges for a given vertex. For the undirected graph the set of outgoing edges is exactly
-     * the same as the set of outgoing edges.
+     * Retrieves the outgoing edges for a given vertex. For the undirected graph the set of outgoing edges is exactly the same as the set of outgoing edges.
      * 
      * @param vertex
      *            - id of the vertex to retrieve incoming edges for.
      * 
-     * @return Set of outgoing edges (if any), empty set (if there are no outgoing edges) or null (if graph doesn't
-     *         contain a vertex with such id).
+     * @return Set of outgoing edges (if any), empty set (if there are no outgoing edges) or null (if graph doesn't contain a vertex with such id).
      */
     public Set<Edge> getOutgoingEdges(int vertex);
 
@@ -176,8 +163,7 @@ public interface Graph {
      * Removes an edge from this graph.
      * 
      * @param e
-     *            - an edge to be deleted, if this graph does not contain such an edge, then "remove" operation is
-     *            skipped.
+     *            - an edge to be deleted, if this graph does not contain such an edge, then "remove" operation is skipped.
      * 
      * @return True if this graph contained the given edge, false otherwise.
      */
@@ -187,8 +173,7 @@ public interface Graph {
      * Removes a vertex together with all its adjacent edges from this graph.
      * 
      * @param vertex
-     *            - id of the vertex to be deleted, if this graph does not contain a vertex with such an id, then
-     *            "remove" operation is skipped.
+     *            - id of the vertex to be deleted, if this graph does not contain a vertex with such an id, then "remove" operation is skipped.
      * 
      * @return True if this graph contained the given vertex, false otherwise.
      */

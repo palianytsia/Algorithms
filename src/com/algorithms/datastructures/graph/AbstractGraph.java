@@ -32,111 +32,109 @@ public abstract class AbstractGraph implements Graph {
      *            - the graph to copy.
      */
     public AbstractGraph(AbstractGraph g) {
-        lastInsertId = g.lastInsertId;
-        for (Edge e : g.edges) {
-            edges.add(new Edge(e));
-        }
-        for (Integer v : g.getVertices()) {
-            vertices.put(v, new HashSet<Edge>(g.vertices.get(v)));
-        }
+	lastInsertId = g.lastInsertId;
+	for (Edge e : g.edges) {
+	    edges.add(new Edge(e));
+	}
+	for (Integer v : g.getVertices()) {
+	    vertices.put(v, new HashSet<Edge>(g.vertices.get(v)));
+	}
     }
 
     @Override
     public void addEdge(int vertexA, int vertexB) {
-        addEdge(vertexA, vertexB, 1);
+	addEdge(vertexA, vertexB, 1);
     }
 
     @Override
     public void addEdge(int vertexA, int vertexB, int length) {
-        if (!hasVertex(vertexA) || !hasVertex(vertexB)) {
-            throw new IllegalArgumentException("One of the vertices: " + vertexA + ", " + vertexB
-                    + " is not contained by this graph");
-        }
-        Edge e = new Edge(vertexA, vertexB, length);
-        edges.add(e);
-        vertices.get(vertexA).add(e);
-        vertices.get(vertexB).add(e);
+	if (!hasVertex(vertexA) || !hasVertex(vertexB)) {
+	    throw new IllegalArgumentException("One of the vertices: " + vertexA + ", " + vertexB + " is not contained by this graph");
+	}
+	Edge e = new Edge(vertexA, vertexB, length);
+	edges.add(e);
+	vertices.get(vertexA).add(e);
+	vertices.get(vertexB).add(e);
     }
 
     @Override
     public int addVertex() {
-        lastInsertId++;
-        vertices.put(lastInsertId, new HashSet<Edge>());
-        return lastInsertId;
+	lastInsertId++;
+	vertices.put(lastInsertId, new HashSet<Edge>());
+	return lastInsertId;
     }
 
-    @Override
     public int addVertices(int n) {
-        for (int i = 0; i < n; i++) {
-            addVertex();
-        }
-        return lastInsertId;
+	for (int i = 0; i < n; i++) {
+	    addVertex();
+	}
+	return lastInsertId;
     }
 
     @Override
     public int[][] getAdjacencyMatrix() {
-        List<Integer> vertices = new ArrayList<Integer>(getVertices());
-        Collections.sort(vertices);
-        int n = vertices.size();
-        int[][] matrix = new int[n + 1][n + 1];
-        for (int j = 1; j <= n; j++) {
-            Integer v = vertices.get(j - 1);
-            matrix[0][j] = matrix[j][0] = v;
-        }
-        for (int i = 1; i <= n; i++) {
-            for (int j = 1; j <= n; j++) {
-                if (i == j || hasEdge(i, j)) {
-                    matrix[i][j] = 1;
-                }
-            }
-        }
-        return matrix;
+	List<Integer> vertices = new ArrayList<Integer>(getVertices());
+	Collections.sort(vertices);
+	int n = vertices.size();
+	int[][] matrix = new int[n + 1][n + 1];
+	for (int j = 1; j <= n; j++) {
+	    Integer v = vertices.get(j - 1);
+	    matrix[0][j] = matrix[j][0] = v;
+	}
+	for (int i = 1; i <= n; i++) {
+	    for (int j = 1; j <= n; j++) {
+		if (i == j || hasEdge(i, j)) {
+		    matrix[i][j] = 1;
+		}
+	    }
+	}
+	return matrix;
     }
 
     @Override
     public Set<Edge> getEdges() {
-        return Collections.unmodifiableSet(edges);
+	return Collections.unmodifiableSet(edges);
     }
 
     @Override
     public int getNumEdges() {
-        return edges.size();
+	return edges.size();
     }
 
     @Override
     public int getNumVertices() {
-        return vertices.size();
+	return vertices.size();
     }
 
     @Override
     public Set<Integer> getVertices() {
-        return Collections.unmodifiableSet(vertices.keySet());
+	return Collections.unmodifiableSet(vertices.keySet());
     }
 
     @Override
     public boolean hasVertex(int vertex) {
-        return vertices.containsKey(vertex);
+	return vertices.containsKey(vertex);
     }
 
     @Override
     public boolean removeEdge(Edge e) {
-        if (edges.remove(e)) {
-            vertices.get(e.getVertexA()).remove(e);
-            vertices.get(e.getVertexB()).remove(e);
-            return true;
-        }
-        return false;
+	if (edges.remove(e)) {
+	    vertices.get(e.getVertexA()).remove(e);
+	    vertices.get(e.getVertexB()).remove(e);
+	    return true;
+	}
+	return false;
     }
 
     @Override
     public boolean removeVertex(int vertex) {
-        Set<Edge> adjacentEdges = vertices.get(vertex);
-        if (adjacentEdges != null) {
-            for (Edge e : adjacentEdges) {
-                removeEdge(e);
-            }
-        }
-        return vertices.remove(vertex) != null;
+	Set<Edge> adjacentEdges = vertices.get(vertex);
+	if (adjacentEdges != null) {
+	    for (Edge e : adjacentEdges) {
+		removeEdge(e);
+	    }
+	}
+	return vertices.remove(vertex) != null;
     }
 
 }

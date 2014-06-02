@@ -4,7 +4,7 @@ public class HeapSortTest extends SortTest {
 
     @Override
     protected void sort(int[] array) {
-        HeapSort.sort(array);
+	HeapSort.sort(array);
     }
 
 }
