@@ -64,6 +64,7 @@ public abstract class AbstractGraph implements Graph {
 	return lastInsertId;
     }
 
+    @Override
     public int addVertices(int n) {
 	for (int i = 0; i < n; i++) {
 	    addVertex();

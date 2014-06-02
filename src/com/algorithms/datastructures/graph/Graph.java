@@ -49,6 +49,13 @@ public interface Graph {
      * @return Identifier of a newly added vertex.
      */
     public int addVertex();
+    
+    /**
+     * Appends a specified number of new vertices to this graph.
+     * 
+     * @return Identifier of the last vertex added by this bulk operation.
+     */
+    public int addVertices(int n);
 
     /**
      * Gets an adjacency matrix of this graph.
