@@ -42,4 +42,13 @@ public class ArrayUtils {
 	list.set(j, temp);
     }
 
+    public static int[] randomArray(int minLength, int maxLength, int minValue, int maxValue) {
+	int length = minLength + (int) (Math.random() * (maxLength - minLength));
+	int[] array = new int[length];
+	for (int i = 0; i < length; i++) {
+	    array[i] = minValue + (int) (Math.random() * (maxValue - minValue));
+	}
+	return array;
+    }
+
 }
