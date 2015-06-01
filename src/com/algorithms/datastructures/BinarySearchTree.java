@@ -5,7 +5,7 @@ import java.util.NoSuchElementException;
 /**
  * Binary search tree (BST) is a data structure that act like a sorted array (e.g. supports fast min/max/median
  * retrieval, in-order traversal, etc.), but additionally supports fast insert and deletion of elements.
- * 
+ *
  * <p>
  * Operations supported by this BST:
  * </p>
@@ -18,16 +18,16 @@ import java.util.NoSuchElementException;
  * <li>rank</li>
  * <li>select</li>
  * </ul>
- * 
+ *
  * <p>
  * <strong>Careful!</strong> This implementation of subtree is guaranteed to be balanced only after it is created.
  * Insert and delete operation do not maintain the balanced invariant, which means after a number of insert/delete the
  * complexity of search tree operations will increase from O(log(n)) to O(log(height)) where height is the distance
  * between root and last level of the tree.
  * </p>
- * 
+ *
  * @author Ivan Palianytsia <a href="mailto:ivan.palianytsia@gmail.com">ivan.palianytsia</a>
- * 
+ *
  */
 public class BinarySearchTree {
 
@@ -36,7 +36,7 @@ public class BinarySearchTree {
 
     /**
      * Creates a new BST that consists only of root node with a given value.
-     * 
+     *
      * @param rootValue
      *            - the value of the root node in a created tree.
      */
@@ -47,11 +47,11 @@ public class BinarySearchTree {
 
     /**
      * Creates a new BST from sorted array.
-     * 
+     *
      * <p>
      * Complexity of this operation is O(n).
      * </p>
-     * 
+     *
      * @param values
      *            - values to be inserted to the BST, must be in sorted order.
      */
@@ -62,14 +62,14 @@ public class BinarySearchTree {
 
     /**
      * Searches for a given value in this BST and returns tree if this value was found.
-     * 
+     *
      * <p>
      * Complexity of this operation is O(log(n)) if this BST is balanced and O(log(height)) if not.
      * </p>
-     * 
+     *
      * @param value
      *            - value to search for.
-     * 
+     *
      * @return true if tree contains the given value, false otherwise.
      */
     public boolean contains(int value) {
@@ -82,15 +82,15 @@ public class BinarySearchTree {
     /**
      * Finds and removes the element from this BST having the given value. If this BST does not contain the given value,
      * nothing happens.
-     * 
+     *
      * <p>
      * Complexity of this operation is O(log(n)) if this BST is balanced and O(log(height)) if not.
      * </p>
-     * 
+     *
      * @param value
      *            - value to be removed from the tree. If tree contains several such values, only one of them is
      *            removed.
-     * 
+     *
      * @return true if this BST was modified as a result of delete operation, false otherwise.
      */
     public boolean delete(int value) {
@@ -114,11 +114,11 @@ public class BinarySearchTree {
 
     /**
      * Inserts a new value to this BST.
-     * 
+     *
      * <p>
      * Complexity of this operation is O(log(n)) if this BST is balanced and O(log(height)) if not.
      * </p>
-     * 
+     *
      * @param value
      *            - value to be inserted.
      */
@@ -134,14 +134,14 @@ public class BinarySearchTree {
 
     /**
      * Finds the minimum value stored in this BST.
-     * 
+     *
      * <p>
      * Complexity of this operation is O(log(n)) if this BST is balanced and O(log(height)) if not.
      * </p>
-     * 
+     *
      * @return maximum value stored in this BST.
-     * 
-     * 
+     *
+     *
      * @throws NoSuchElementException
      *             if this BST is empty.
      */
@@ -154,13 +154,13 @@ public class BinarySearchTree {
 
     /**
      * Finds the minimum value stored in this BST.
-     * 
+     *
      * <p>
      * Complexity of this operation is O(log(n)) if this BST is balanced and O(log(height)) if not.
      * </p>
-     * 
+     *
      * @return minimum value stored in this BST.
-     * 
+     *
      * @throws NoSuchElementException
      *             if this BST is empty.
      */
@@ -191,11 +191,11 @@ public class BinarySearchTree {
 
     /**
      * Converts this BST to sorted array (output in sorted order operation).
-     * 
+     *
      * <p>
      * Complexity of this operation is O(n).
      * </p>
-     * 
+     *
      * @return array containing values stored in this BST in sorted order.
      */
     public int[] toArray() {
@@ -277,10 +277,10 @@ public class BinarySearchTree {
 
     /**
      * Finds a node having max value in the subtree with root in the given node.
-     * 
+     *
      * @param root
      *            - root of the subtree to find maximum in.
-     * 
+     *
      * @return Node with max value (the right most node in the subtree).
      */
     private Node max(Node root) {
@@ -293,10 +293,10 @@ public class BinarySearchTree {
 
     /**
      * Finds a node having min value in the subtree with root in the given node.
-     * 
+     *
      * @param root
      *            - root of the subtree to find minimum in.
-     * 
+     *
      * @return Node with min value (the left most node in the subtree).
      */
     private Node min(Node root) {
@@ -363,6 +363,7 @@ public class BinarySearchTree {
 	return root;
     }
 
+    @SuppressWarnings("unused")
     private Node successor(Node node) {
 	if (node.rightChild != null) {
 	    return min(node.rightChild);
@@ -396,7 +397,7 @@ public class BinarySearchTree {
 
     /**
      * A building block for BST implementation.
-     * 
+     *
      * <p>
      * Except for value, stores the following information in order to assist BST operations:
      * </p>
@@ -406,7 +407,7 @@ public class BinarySearchTree {
      * <li>parent pointer</li>
      * <li>size of subtree with root in this node</li>
      * </ul>
-     * 
+     *
      * @author Ivan Palianytsia <a href="mailto:ivan.palianytsia@gmail.com">ivan.palianytsia</a>
      */
     private static class Node {
