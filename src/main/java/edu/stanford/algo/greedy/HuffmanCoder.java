@@ -1,4 +1,4 @@
-package com.algorithms.greedy;
+package edu.stanford.algo.greedy;
 
 import java.util.Collections;
 import java.util.Comparator;

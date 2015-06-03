@@ -1,4 +1,4 @@
-package com.algorithms.greedy;
+package edu.stanford.algo.greedy;
 
 import java.io.File;
 import java.util.HashSet;
@@ -10,9 +10,12 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import edu.stanford.algo.greedy.Job;
+import edu.stanford.algo.greedy.JobScheduler;
+
 public class JobSchedulerTest {
 
-    private final String dataFileLocation = "test\\data\\greedy\\jobs.txt";
+    private final String dataFileLocation =  getClass().getResource("jobs.txt").getPath();
     private final Set<Job> jobs = new HashSet<Job>();
 
     @Before

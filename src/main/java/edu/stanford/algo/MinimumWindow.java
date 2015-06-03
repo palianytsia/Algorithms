@@ -1,4 +1,4 @@
-package com.algorithms;
+package edu.stanford.algo;
 
 import java.util.Collections;
 import java.util.HashMap;

@@ -1,4 +1,4 @@
-package com.algorithms.datastructures;
+package edu.stanford.algo.structures;
 
 import static org.junit.Assert.assertTrue;
 
@@ -7,14 +7,14 @@ import java.util.Arrays;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.algorithms.datastructures.graph.DirectedGraph;
-import com.algorithms.datastructures.graph.GraphUtils;
+import edu.stanford.algo.structures.graph.DirectedGraph;
+import edu.stanford.algo.structures.graph.GraphUtils;
 
 public class DirectedGraphTest {
 
     private DirectedGraph g;
 
-    private final String dataFileLocation = "test\\data\\datastructures\\graph.txt";
+    private final String dataFileLocation = getClass().getResource("graph.txt").getPath();
 
     private final int[][] verificationMatrix = { { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }, { 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0 },
 	    { 2, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0 }, { 3, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 }, { 4, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0 }, { 5, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0 },

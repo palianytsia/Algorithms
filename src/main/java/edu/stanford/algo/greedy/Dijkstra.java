@@ -1,4 +1,4 @@
-package com.algorithms.greedy;
+package edu.stanford.algo.greedy;
 
 import java.util.Comparator;
 import java.util.HashMap;
@@ -7,8 +7,8 @@ import java.util.PriorityQueue;
 import java.util.SortedMap;
 import java.util.TreeMap;
 
-import com.algorithms.datastructures.graph.Edge;
-import com.algorithms.datastructures.graph.Graph;
+import edu.stanford.algo.structures.graph.Edge;
+import edu.stanford.algo.structures.graph.Graph;
 
 /**
  * Dijkstra's shortest-path algorithm, surely one of the greatest hits of algorithms. It works in any directed or undirected graph with non-negative edge

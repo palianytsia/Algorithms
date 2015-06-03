@@ -1,10 +1,10 @@
-package com.algorithms.greedy;
+package edu.stanford.algo.greedy;
 
 import java.util.HashSet;
 import java.util.Set;
 
-import com.algorithms.datastructures.graph.Edge;
-import com.algorithms.datastructures.graph.UndirectedGraph;
+import edu.stanford.algo.structures.graph.Edge;
+import edu.stanford.algo.structures.graph.UndirectedGraph;
 
 /**
  * Prim's minimum spanning tree algorithm.

@@ -1,4 +1,4 @@
-package com.algorithms.dynamic;
+package edu.stanford.algo.dynamic;
 
 import java.io.FileNotFoundException;
 import java.util.SortedMap;
@@ -6,13 +6,14 @@ import java.util.SortedMap;
 import org.junit.Assert;
 import org.junit.Test;
 
-import com.algorithms.datastructures.graph.DirectedGraph;
+import edu.stanford.algo.dynamic.BellmanFord;
+import edu.stanford.algo.structures.graph.DirectedGraph;
 
 public class BellmanFordTest {
 
-    private final String graphFileLocation = "test\\data\\dynamic\\bellman-ford.txt";
-    private final String negativeCostGraphFileLocation = "test\\data\\dynamic\\bellman-ford-negative-cost.txt";
-    private final String negativeCycleGraphFileLocation = "test\\data\\dynamic\\bellman-ford-negative-cycle.txt";
+    private final String graphFileLocation = getClass().getResource("bellman-ford.txt").getPath();
+    private final String negativeCostGraphFileLocation = getClass().getResource("bellman-ford-negative-cost.txt").getPath();
+    private final String negativeCycleGraphFileLocation = getClass().getResource("bellman-ford-negative-cycle.txt").getPath();
 
     @Test
     public void testNegativeCostShortestPath() {

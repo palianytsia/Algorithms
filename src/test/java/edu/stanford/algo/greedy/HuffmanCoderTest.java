@@ -1,4 +1,4 @@
-package com.algorithms.greedy;
+package edu.stanford.algo.greedy;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -7,6 +7,8 @@ import java.util.Map.Entry;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+
+import edu.stanford.algo.greedy.HuffmanCoder;
 
 public class HuffmanCoderTest {
 
@@ -49,7 +51,7 @@ public class HuffmanCoderTest {
 
     @Test
     public void testGetEvarageEncodingLength() {
-	Assert.assertTrue(2.23 == coder.getEvarageEncodingLength());
+	Assert.assertEquals(coder.getEvarageEncodingLength(), 2.23F, 0.0001F);
     }
 
 }

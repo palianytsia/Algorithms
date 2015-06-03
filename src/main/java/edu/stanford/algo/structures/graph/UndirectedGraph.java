@@ -1,4 +1,4 @@
-package com.algorithms.datastructures.graph;
+package edu.stanford.algo.structures.graph;
 
 import java.io.File;
 import java.io.FileNotFoundException;

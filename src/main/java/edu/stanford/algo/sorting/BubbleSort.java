@@ -1,4 +1,4 @@
-package com.algorithms.sorting;
+package edu.stanford.algo.sorting;
 
 /**
  * Showcase implementation of <strong>Bubble sort</strong>.

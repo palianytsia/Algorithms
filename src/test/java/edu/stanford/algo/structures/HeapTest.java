@@ -1,7 +1,9 @@
-package com.algorithms.datastructures;
+package edu.stanford.algo.structures;
 
 import org.junit.Assert;
 import org.junit.Test;
+
+import edu.stanford.algo.structures.Heap;
 
 public class HeapTest {
 

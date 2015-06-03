@@ -1,4 +1,4 @@
-package com.algorithms.datastructures.graph;
+package edu.stanford.algo.structures.graph;
 
 /**
  * @author Ivan Palianytsia <a href="mailto:ivan.palianytsia@gmail.com">ivan.palianytsia@gmail.com</a>

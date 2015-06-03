@@ -1,4 +1,4 @@
-package com.algorithms.greedy;
+package edu.stanford.algo.greedy;
 
 public class Job {
 

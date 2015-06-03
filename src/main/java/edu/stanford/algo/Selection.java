@@ -1,8 +1,8 @@
-package com.algorithms;
+package edu.stanford.algo;
 
 import java.util.Arrays;
 
-import com.algorithms.sorting.ArrayUtils;
+import edu.stanford.algo.sorting.ArrayUtils;
 
 public class Selection {
 

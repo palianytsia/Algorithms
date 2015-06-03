@@ -1,4 +1,4 @@
-package com.algorithms.greedy;
+package edu.stanford.algo.greedy;
 
 import java.io.FileNotFoundException;
 import java.util.SortedMap;
@@ -6,12 +6,13 @@ import java.util.SortedMap;
 import org.junit.Assert;
 import org.junit.Test;
 
-import com.algorithms.datastructures.graph.DirectedGraph;
-import com.algorithms.datastructures.graph.UndirectedGraph;
+import edu.stanford.algo.greedy.Dijkstra;
+import edu.stanford.algo.structures.graph.DirectedGraph;
+import edu.stanford.algo.structures.graph.UndirectedGraph;
 
 public class DijkstraTest {
 
-    private final String dataFileLocation = "test\\data\\greedy\\dijkstra.txt";
+    private final String dataFileLocation = getClass().getResource("dijkstra.txt").getPath();
 
     @Test
     public void testDirectedGraphShortestPath() {

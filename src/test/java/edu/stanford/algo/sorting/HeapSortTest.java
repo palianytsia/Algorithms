@@ -1,4 +1,6 @@
-package com.algorithms.sorting;
+package edu.stanford.algo.sorting;
+
+import edu.stanford.algo.sorting.HeapSort;
 
 public class HeapSortTest extends SortTest {
 

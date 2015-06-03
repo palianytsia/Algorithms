@@ -1,8 +1,8 @@
-package com.algorithms.datastructures;
+package edu.stanford.algo.structures;
 
 import java.util.Arrays;
 
-import com.algorithms.sorting.ArrayUtils;
+import edu.stanford.algo.sorting.ArrayUtils;
 
 /**
  * This is a demonstration of how the heap works. Heap is a data structure that offers a fast way to do repeated minimum computation for the contained elements.

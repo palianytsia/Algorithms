@@ -1,4 +1,4 @@
-package com.algorithms.dynamic;
+package edu.stanford.algo.dynamic;
 
 public class Knapsack {
 

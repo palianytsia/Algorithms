@@ -1,4 +1,4 @@
-package com.algorithms.sorting;
+package edu.stanford.algo.sorting;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;

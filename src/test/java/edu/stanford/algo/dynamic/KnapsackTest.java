@@ -1,4 +1,4 @@
-package com.algorithms.dynamic;
+package edu.stanford.algo.dynamic;
 
 import static org.junit.Assert.fail;
 
@@ -8,7 +8,8 @@ import java.util.Scanner;
 
 import org.junit.Test;
 
-import com.algorithms.dynamic.Knapsack.Item;
+import edu.stanford.algo.dynamic.Knapsack;
+import edu.stanford.algo.dynamic.Knapsack.Item;
 
 public class KnapsackTest {
 

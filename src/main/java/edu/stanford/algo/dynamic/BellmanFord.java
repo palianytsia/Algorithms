@@ -1,10 +1,10 @@
-package com.algorithms.dynamic;
+package edu.stanford.algo.dynamic;
 
 import java.util.SortedMap;
 import java.util.TreeMap;
 
-import com.algorithms.datastructures.graph.DirectedGraph;
-import com.algorithms.datastructures.graph.Edge;
+import edu.stanford.algo.structures.graph.DirectedGraph;
+import edu.stanford.algo.structures.graph.Edge;
 
 /**
  * The Bellman-Ford algorithm solves the single-source shortest-path problem. While slower than Dijkstra's algorithm, it accommodates negative edge lengths and

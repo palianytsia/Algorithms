@@ -1,4 +1,4 @@
-package com.algorithms.greedy;
+package edu.stanford.algo.greedy;
 
 import java.util.Comparator;
 import java.util.HashMap;
@@ -7,8 +7,8 @@ import java.util.Map;
 import java.util.PriorityQueue;
 import java.util.Set;
 
-import com.algorithms.datastructures.graph.Edge;
-import com.algorithms.datastructures.graph.Graph;
+import edu.stanford.algo.structures.graph.Edge;
+import edu.stanford.algo.structures.graph.Graph;
 
 /**
  * Clustering is an important form of unsupervised learning (i.e., extracting patterns from unlabeled data). This class demonstrates how Kruskal's MST algorithm

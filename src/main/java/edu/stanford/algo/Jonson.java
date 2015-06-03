@@ -1,12 +1,12 @@
-package com.algorithms;
+package edu.stanford.algo;
 
 import java.util.SortedMap;
 import java.util.TreeMap;
 
-import com.algorithms.datastructures.graph.DirectedGraph;
-import com.algorithms.datastructures.graph.Edge;
-import com.algorithms.dynamic.BellmanFord;
-import com.algorithms.greedy.Dijkstra;
+import edu.stanford.algo.dynamic.BellmanFord;
+import edu.stanford.algo.greedy.Dijkstra;
+import edu.stanford.algo.structures.graph.DirectedGraph;
+import edu.stanford.algo.structures.graph.Edge;
 
 /**
  * Johnson's algorithm is a way to find the shortest paths between all pairs of vertices in a sparse directed graph. It allows some of the edge weights to be

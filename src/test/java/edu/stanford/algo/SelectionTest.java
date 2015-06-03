@@ -1,11 +1,12 @@
-package com.algorithms;
+package edu.stanford.algo;
 
 import java.util.Arrays;
 
 import org.junit.Assert;
 import org.junit.Test;
 
-import com.algorithms.sorting.ArrayUtils;
+import edu.stanford.algo.Selection;
+import edu.stanford.algo.sorting.ArrayUtils;
 
 public class SelectionTest {
 

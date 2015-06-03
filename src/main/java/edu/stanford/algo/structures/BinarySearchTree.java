@@ -1,4 +1,4 @@
-package com.algorithms.datastructures;
+package edu.stanford.algo.structures;
 
 import java.util.NoSuchElementException;
 

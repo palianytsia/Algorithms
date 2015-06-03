@@ -1,7 +1,8 @@
-package com.algorithms.greedy;
+package edu.stanford.algo.greedy;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.net.URL;
 import java.util.BitSet;
 import java.util.Scanner;
 import java.util.Set;
@@ -9,18 +10,21 @@ import java.util.Set;
 import org.junit.Assert;
 import org.junit.Test;
 
-import com.algorithms.datastructures.graph.Graph;
-import com.algorithms.datastructures.graph.UndirectedGraph;
+import edu.stanford.algo.greedy.Cluster;
+import edu.stanford.algo.greedy.Clustering;
+import edu.stanford.algo.greedy.HammingClustering;
+import edu.stanford.algo.structures.graph.Graph;
+import edu.stanford.algo.structures.graph.UndirectedGraph;
 
 public class ClusteringTest {
 
-    private final String dataFile1 = "test\\data\\greedy\\clustering1.txt";
-    private final String dataFile2 = "test\\data\\greedy\\clustering2.txt";
+    private final URL dataFile1 = getClass().getResource("clustering1.txt"); 
+    private final URL dataFile2 = getClass().getResource("clustering2.txt");
 
     @Test
     public void testClustering() {
 	try {
-	    Graph g = UndirectedGraph.fromFile(dataFile1);
+	    Graph g = UndirectedGraph.fromFile(dataFile1.getPath());
 	    Set<Cluster> clusters = Clustering.findClusters(g, 4);
 
 	    Assert.assertEquals(4, clusters.size());
@@ -41,7 +45,7 @@ public class ClusteringTest {
     @Test
     public void testGetMaxNumberOfClusters() {
 	try {
-	    File dataFile = new File(dataFile2);
+	    File dataFile = new File(dataFile2.getPath());
 	    Scanner scanner = new Scanner(dataFile);
 
 	    // number of nodes

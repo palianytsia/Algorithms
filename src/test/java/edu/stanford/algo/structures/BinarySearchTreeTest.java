@@ -1,11 +1,12 @@
-package com.algorithms.datastructures;
+package edu.stanford.algo.structures;
 
 import java.util.Arrays;
 
 import org.junit.Assert;
 import org.junit.Test;
 
-import com.algorithms.sorting.ArrayUtils;
+import edu.stanford.algo.sorting.ArrayUtils;
+import edu.stanford.algo.structures.BinarySearchTree;
 
 public class BinarySearchTreeTest {
 

@@ -1,4 +1,4 @@
-package com.algorithms.sorting;
+package edu.stanford.algo.sorting;
 
 public class InsertionSort {
 

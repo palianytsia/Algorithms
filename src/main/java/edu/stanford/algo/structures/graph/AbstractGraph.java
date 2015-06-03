@@ -1,4 +1,4 @@
-package com.algorithms.datastructures.graph;
+package edu.stanford.algo.structures.graph;
 
 import java.util.ArrayList;
 import java.util.Collections;

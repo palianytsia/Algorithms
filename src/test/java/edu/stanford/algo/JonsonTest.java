@@ -1,4 +1,4 @@
-package com.algorithms;
+package edu.stanford.algo;
 
 import java.io.FileNotFoundException;
 import java.util.SortedMap;
@@ -6,12 +6,13 @@ import java.util.SortedMap;
 import org.junit.Assert;
 import org.junit.Test;
 
-import com.algorithms.datastructures.graph.DirectedGraph;
+import edu.stanford.algo.Jonson;
+import edu.stanford.algo.structures.graph.DirectedGraph;
 
 public class JonsonTest {
 
-    private final String graphFileLocation = "test\\data\\jonson.txt";
-    private final String negativeCycleGraphFileLocation = "test\\data\\jonson-negative-cycle.txt";
+    private final String graphFileLocation = getClass().getResource("jonson.txt").getPath();
+    private final String negativeCycleGraphFileLocation = getClass().getResource("jonson-negative-cycle.txt").getPath();
 
     @Test
     public void testAllPairsShortestPaths() {
@@ -33,7 +34,7 @@ public class JonsonTest {
         } catch (FileNotFoundException e) {
             Assert.fail(e.getMessage());
         }
-        Assert.assertTrue(19 == minShortestPathDistance);
+        Assert.assertEquals(minShortestPathDistance, new Double(19));
     }
 
     @Test

@@ -1,4 +1,4 @@
-package com.algorithms.greedy;
+package edu.stanford.algo.greedy;
 
 import java.io.FileNotFoundException;
 import java.util.Set;
@@ -6,12 +6,13 @@ import java.util.Set;
 import org.junit.Assert;
 import org.junit.Test;
 
-import com.algorithms.datastructures.graph.Edge;
-import com.algorithms.datastructures.graph.UndirectedGraph;
+import edu.stanford.algo.greedy.Prim;
+import edu.stanford.algo.structures.graph.Edge;
+import edu.stanford.algo.structures.graph.UndirectedGraph;
 
 public class PrimTest {
 
-    private final String dataFileLocation = "test\\data\\greedy\\prim.txt";
+    private final String dataFileLocation = getClass().getResource("prim.txt").getPath();
 
     @Test
     public void testGetMinimumSpanningTree() {

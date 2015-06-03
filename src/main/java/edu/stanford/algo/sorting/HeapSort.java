@@ -1,6 +1,6 @@
-package com.algorithms.sorting;
+package edu.stanford.algo.sorting;
 
-import com.algorithms.datastructures.Heap;
+import edu.stanford.algo.structures.Heap;
 
 public class HeapSort {
 

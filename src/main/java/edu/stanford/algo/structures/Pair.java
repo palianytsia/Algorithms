@@ -1,4 +1,4 @@
-package com.algorithms.datastructures;
+package edu.stanford.algo.structures;
 
 public final class Pair<T> {
 
