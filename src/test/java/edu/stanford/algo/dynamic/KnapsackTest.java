@@ -13,7 +13,7 @@ import edu.stanford.algo.dynamic.Knapsack.Item;
 
 public class KnapsackTest {
 
-    private final String dataFileLocation = "test\\data\\dynamic\\knapsack1.txt";
+	private final String dataFileLocation = getClass().getResource("knapsack1.txt").getPath();
 
     @Test
     public void testPack() {

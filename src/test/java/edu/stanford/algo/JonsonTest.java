@@ -34,7 +34,7 @@ public class JonsonTest {
         } catch (FileNotFoundException e) {
             Assert.fail(e.getMessage());
         }
-        Assert.assertEquals(minShortestPathDistance, new Double(19));
+        Assert.assertEquals(new Double(-19), minShortestPathDistance);
     }
 
     @Test
