@@ -18,7 +18,7 @@ import edu.stanford.algo.structures.graph.UndirectedGraph;
 
 public class ClusteringTest {
 
-    private final URL dataFile1 = getClass().getResource("clustering1.txt"); 
+    private final URL dataFile1 = getClass().getResource("clustering1.txt");
     private final URL dataFile2 = getClass().getResource("clustering2.txt");
 
     @Test

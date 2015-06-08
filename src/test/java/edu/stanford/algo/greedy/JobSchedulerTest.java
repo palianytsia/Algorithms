@@ -15,7 +15,7 @@ import edu.stanford.algo.greedy.JobScheduler;
 
 public class JobSchedulerTest {
 
-    private final String dataFileLocation =  getClass().getResource("jobs.txt").getPath();
+    private final String dataFileLocation = getClass().getResource("jobs.txt").getPath();
     private final Set<Job> jobs = new HashSet<Job>();
 
     @Before
